@@ -1,2 +1,2 @@
 # scripts-bin
-Shell scripts from Dell Latitude 3150 
+Shell scripts cloned from Dell Latitude 3150 to Lenovo Thinkpad T440S via Crucial SSD
