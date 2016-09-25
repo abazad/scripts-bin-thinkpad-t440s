@@ -2,7 +2,7 @@
 
 usage="usage: $0 -c {up|down} -i [increment]"
 command=
-increment=15
+increment=10
 
 while getopts i:h o
 do case "$o" in
@@ -23,13 +23,13 @@ fi
 display_brightness=0
 
 if [ "$command" = "up" ]; then
-    display_brightness=$(xbacklight -inc $increment && xbacklight -get | awk -F"." '{print $1}')
+    display_brightness=$(light -A $increment && light -G | awk -F"." '{print $1}')
     icon_name="/usr/share/icons/gnome-colors-common/scalable/notifications/notification-display-brightness-high.svg"
 fi
 
 if [ "$command" = "down" ]; then
-    display_brightness=$(xbacklight -dec $increment && xbacklight -get | awk -F"." '{print $1}')
-    icon_name="/usr/share/icons/gnome-colors-common/scalable/notifications/notification-display-brightness-low.svg"
+    display_brightness=$(light -U $increment && light -G | awk -F"." '{print $1}')
+    icon_name="/usr/share/icons/gnome-colors-common/scalable/notifications/notification-display-brightness-high.svg"
 fi
 
-notify-send " " -i $icon_name -h int:value:$display_brightness -h string:synchronous:brightness --expire-time=100
+notify-send " " -i $icon_name -h int:value:$display_brightness -h string:synchronous:brightness --expire-time=1000
