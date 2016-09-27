@@ -1,5 +1,12 @@
 #!/bin/bash
 
 FAN="`sensors | grep fan | awk '{print $2, $3}'`"
+NOT_RUNNING="0 RPM"
+
 echo ":: ${FAN}"
-exit 0
+
+if [[ $FAN == $NOT_RUNNING ]]; then
+   exit 0
+else
+   exit 1
+fi
