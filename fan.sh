@@ -3,7 +3,7 @@
 FAN="`sensors | grep fan | awk '{print $2, $3}'`"
 NOT_RUNNING="0 RPM"
 
-echo ":: ${FAN}"
+echo ": ${FAN}"
 
 if [[ $FAN == $NOT_RUNNING ]]; then
    exit 0
