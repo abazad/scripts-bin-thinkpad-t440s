@@ -7,4 +7,4 @@
 /usr/bin/echo -n "25" > /sys/devices/platform/i8042/serio1/serio2/drift_time
 /usr/bin/echo -n "6" > /sys/devices/platform/i8042/serio1/serio2/inertia
 
-/usr/bin/systemd-cat -t "Trackpoint" /usr/bin/echo "***** Modifying Trackpoint attributes on $(date) *****"
+/usr/bin/systemd-cat -t "Trackpoint" /usr/bin/echo "***** MODIFYING TRACKPOINT ATTRIBUTES ON $(date) *****"
