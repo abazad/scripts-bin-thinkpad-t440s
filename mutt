@@ -2,7 +2,7 @@
 
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
 
-if [ "$(pidof i3)" ]
+if [ "$(pidof Xorg)" ]
 then
       /usr/bin/termite -e 'ssh -o ServerAliveInterval=100 -t srsantos@ubuntu_server "mutt"' --class=mutt
   else
