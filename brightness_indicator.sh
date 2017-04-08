@@ -2,7 +2,7 @@
 
 usage="usage: $0 -c {up|down} -i [increment]"
 command=
-increment=10
+increment=7.5
 
 while getopts i:h o
 do case "$o" in
@@ -32,4 +32,7 @@ if [ "$command" = "down" ]; then
     icon_name="/usr/share/icons/gnome-colors-common/scalable/notifications/notification-display-brightness-high.svg"
 fi
 
-notify-send " " -i $icon_name -h int:value:$display_brightness -h string:synchronous:brightness --expire-time=1000
+##/usr/local/bin/notify-send.sh " " -i $icon_name -h int:value:$display_brightness -h string:synchronous:brightness --expire-time=3000 --replace-file=/tmp/brightness_notification
+
+/usr/local/bin/notify-send.sh -i $icon_name --hint=int:transient:1 "Current Brightness: $display_brightness%" "Changed by $increment%" --expire-time=3000 --replace-file=/tmp/brightness_notification
+
