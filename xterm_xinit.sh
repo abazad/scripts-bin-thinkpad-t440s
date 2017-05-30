@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-/usr/bin/xterm -maximized -e tmux
+#usr/bin/xterm -maximized -e tmux
