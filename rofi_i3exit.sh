@@ -6,7 +6,7 @@ if [[ $res = "LOCK SCREEN" ]]; then
     xset dpms force off
 fi
 if [[ $res = "LOGOUT TO LIGHTDM" ]]; then
-    /usr/bin/rm -f /tmp/screen_lock_toggled_off.lock /tmp/openconnect_vpn.lock && /usr/bin/i3-msg exit
+    /usr/bin/rm -f /tmp/screen_lock_toggled_off.lock /tmp/openconnect_vpn.lock /tmp/touchpad_toggled.* && /usr/bin/i3-msg exit
 fi
 if [[ $res = "SUSPEND TO RAM" ]]; then
     systemctl suspend
